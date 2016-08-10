@@ -8,15 +8,17 @@ comme avec une application web. Sauf que tout ceci se passe localement.
 
 ###Installation
 Dans un dossier au choix, à l'aide du terminal Windows (dans Pycharm ou CMD):
+
 1. `git clone https://github.com/konoufo/gpcgui.git`
 2. `bin\gpcgui\Scripts\pip install -r source\requirements.txt`
 
 ###Utilisation
 Toujours dans le même dossier:
+
 1. `bin\gpcgui\Scripts\python source\run.py` (démarrage du serveur)
 2. Puis ouvrir un navigateur et aller à [http://localhost:5000](http://localhost:5000).
 
 ###TODOs
-- Relier à GPC et en faire un repositoire unique.
-- Intégrer un "navigateur" léger dans le programme pour pouvoir opérer dans une fenêtre complètement indépendante.
-- Développer un thème pour les différentes plateformes, pour un rendu plus "natif" !
+- [ ] Relier à GPC et en faire un repositoire unique.
+- [ ] Intégrer un "navigateur" léger dans le programme pour pouvoir opérer dans une fenêtre complètement indépendante.
+- [ ] Développer un thème pour les différentes plateformes, pour un rendu plus "natif" !
