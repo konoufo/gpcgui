@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+{% block styles %}
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootflat.github.io/bootflat/css/bootflat.css">
+    {% block extra_styles %}{% endblock %}
+{% endblock %}
+{% block head_scripts %}
+    <script src="https://use.fontawesome.com/5df5117cd6.js"></script>
+    {% block extra_head_scripts %}{% endblock %}
+{% endblock %}
+</head>
+<body style="background-color:#CCD1D9">
+{% block content %}
+    <section class="container">
+        <section id="folderBar" >
+            <div class="row" style="padding:16px 0">
+                <div class="col-md-8 col-md-push-2" style="text-align: center">
+                    <div style="display:inline-block; max-width: 800px; min-width: 300px">
+                        <input class="form-control" placeholder="sélectionner un dossier"/>
+                    </div>
+                    <div style="display:inline-block;max-width: 200px;min-width: 100px;padding:8px;text-align: center;">
+                        <button id="browseButton" class="btn btn-primary" style="vertical-align:initial">Parcourir</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="information">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Chemin</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input name="1" type="checkbox"> </td>
+                                    <td class="pathCell text-info">C:\Users\lde\Downloads</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-4" style="text-align:center">
+                    <!--<img src="" alt="" />-->
+                    <i class="fa fa-ban" style="font-size:100px"></i>
+                    <p style="padding:8px;text-align:center">No Preview</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="row">
+                <div class="col-md-3">
+                    <a class="btn btn-block btn-success" style="max-width:300px;text-transform:uppercase">Commencer le tri</a>
+                </div>
+                <div class="col-md-3">
+                    <a class="btn btn-block disabled" style="max-width:300px;text-transform:uppercase">Supprimer les doublons</a>
+                </div>
+            </div>
+        </section>
+    </section>
+{% endblock %}
+{% block scripts %}
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <!-- Bootflat's JS files.-->
+    <script src="https://bootflat.github.io/bootflat/js/icheck.min.js"></script>
+    <script src="https://bootflat.github.io/bootflat/js/jquery.fs.selecter.min.js"></script>
+    <script src="https://bootflat.github.io/bootflat/js/jquery.fs.stepper.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("input[type=checkbox]").iCheck({
+                checkboxClass: 'icheckbox_flat',
+                increaseArea: '20%'
+            });
+        })
+    </script>
+    {% block extra_scripts %}{% endblock %}
+{% endblock %}
+</body>
+</html>
