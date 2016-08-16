@@ -1,0 +1,27 @@
+<script>
+$(document).ready(function(){
+    $("#browseButton").click(function(){
+        $.get('/selectfolder', function(data){
+            console.log('/selectfolder : ', data);
+            var el = document.getElementById("currentFolder");
+            $(el).val(data.folderpath);
+            adjustWidthOfInput(el);
+        })
+    })
+})
+</script>
+<script>
+function getWidthOfInput(inputEl) {
+    var tmp = document.createElement("span");
+    tmp.className = "input-element tmp-element";
+    tmp.innerHTML = inputEl.value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    document.body.appendChild(tmp);
+    var theWidth = tmp.getBoundingClientRect().width;
+    document.body.removeChild(tmp);
+    return theWidth;
+}
+
+function adjustWidthOfInput(inputEl) {
+    inputEl.style.width = getWidthOfInput(inputEl) + "px";
+}
+</script>

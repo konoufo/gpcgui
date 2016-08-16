@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="container">
+        <section id="folderBar" >
+            <div class="row" style="padding:16px 0">
+                <div class="col-md-8 col-md-push-2" style="text-align: center">
+                    <div style="display:inline-block; max-width: 800px; min-width: 300px">
+                        <input id="currentFolder" class="form-control" placeholder="sélectionner un dossier"/>
+                    </div>
+                    <div style="display:inline-block;max-width: 200px;min-width: 100px;padding:8px;text-align: center;">
+                        <button id="browseButton" class="btn btn-primary" style="vertical-align:initial">Parcourir</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="alert">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4 class="alert-heading">
+                            Succès!
+                        </h4>
+                        <p style="padding:0 8px;">Le résultat de la recherche: 10 000 fichiers trouvés.</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="actions">
+            <div class="row">
+                <div class="col-md-3">
+                    <a class="btn btn-block btn-success" style="max-width:300px;text-transform:uppercase">Commencer le tri</a>
+                </div>
+                <div class="col-md-3">
+                    <a class="btn btn-block disabled" style="max-width:300px;text-transform:uppercase">Supprimer les doublons</a>
+                </div>
+            </div>
+        </section>
+        <section id="main">
+            <div class="row" style="padding-bottom:12px;padding-top:12px;">
+                <div class="col-md-8">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Chemin</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input name="1" type="checkbox"> </td>
+                                    <td class="pathCell text-info">C:\Users\lde\Downloads</td>
+                                    <td><button class="btn btn-info ">Actions</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-4" style="text-align:center">
+                    <!--<img src="" alt="" />-->
+                    <i class="fa fa-ban" style="font-size:100px"></i>
+                    <p style="padding:8px;text-align:center">No Preview</p>
+                </div>
+            </div>
+        </section>
+
+    </section>
+{% endblock %}
+{% block extra_scripts %}
+    {% include 'index_scripts.html' %}
+{% endblock %}
